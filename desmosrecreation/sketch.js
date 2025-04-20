@@ -74,4 +74,4 @@ function getYValue(x){
   return eval(expression);
 }
 
-console.log((landmark/zoom)/interval)
+//console.log((landmark/zoom)/interval)
