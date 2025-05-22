@@ -1,21 +1,55 @@
+/* HTML Headings and Paragraph Styles */
 body {
   background-color: gainsboro;
 }
 h1 {
   color: rgb(148, 106, 148);
-  font-family: serif;
-  font-size: 75%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 90%;
 }
-h2, h4, h5  {
+h2  {
   color: black;
-  font-family: serif;
-  font-size: 150%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 125%;
+  text-align: center;
+  text-decoration: underline;
 }
 h3  {
   color: black;
-  font-family: serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 100%;
 }
 p {
   color: black;
+  font-family: serif;
+  margin-right: 80px;
+  margin-left: 80px;
+}
+.centered {
+  text-align: center;
+}
+.indented {
+  text-indent: 2em;
+}
+.subtext{
+  margin-right: 140px;
+  margin-left: 140px;
+}
+.artifact {
+  color: rgb(99, 70, 99);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 105%;
+  text-decoration: wavy underline;
+}
+.subsection {
+  text-indent: 2em;
+  color: rgb(99, 70, 99);
+  font-family: cursive;
+  font-size: 105%;
+}
+.header {
+  padding: 20px;
+  text-align: center;
+  background: #aaa3bc;
+  color: white;
 }
