@@ -6,7 +6,7 @@ h1 {
   font-family: serif;
   font-size: 75%;
 }
-h2  {
+h2, h4, h5  {
   color: black;
   font-family: serif;
   font-size: 150%;
@@ -15,11 +15,6 @@ h3  {
   color: black;
   font-family: serif;
   font-size: 100%;
-}
-h4, h5  {
-  color: black;
-  font-family: serif;
-  font-size: 150%;
 }
 p {
   color: black;
