@@ -2,9 +2,9 @@ body {
   background-color: gainsboro;
 }
 h1 {
-  color: plum;
+  color: rgb(148, 106, 148);
   font-family: serif;
-  font-size: 50%;
+  font-size: 75%;
 }
 h2  {
   color: black;
