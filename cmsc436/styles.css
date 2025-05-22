@@ -3,7 +3,7 @@ body {
   background-color: gainsboro;
 }
 h1 {
-  color: rgb(148, 106, 148);
+  color: rgb(103, 74, 103);
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 90%;
 }
@@ -35,21 +35,38 @@ p {
   margin-right: 140px;
   margin-left: 140px;
 }
+
+.indentsubtext{
+  margin-right: 140px;
+  margin-left: 170px;
+}
 .artifact {
   color: rgb(99, 70, 99);
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 105%;
+  font-size: 120%;
   text-decoration: wavy underline;
 }
 .subsection {
   text-indent: 2em;
   color: rgb(99, 70, 99);
   font-family: cursive;
-  font-size: 105%;
+  font-size: 120%;
 }
 .header {
   padding: 20px;
   text-align: center;
   background: #aaa3bc;
   color: white;
+}
+table, th, td {
+  margin-left: 160px;
+  border: 1px solid black;
+}
+boldred {
+  color: rgb(211, 11, 58);
+  font-family: fantasy;
+  font-weight: 1000;
+}
+bold {
+  font-weight: bold;
 }
