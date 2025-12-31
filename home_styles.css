@@ -273,3 +273,84 @@ figure img {
 	border-style:			solid;
 	border-color:			rgb(207, 166, 0) rgb(207, 166, 0) rgb(145, 110, 0) rgb(145, 110, 0);
 	}
+
+/* Project collapsibles - full width, left-aligned */
+.collapsible-project {
+  background-color: #fff;
+  color: var(--dark-tan);
+  cursor: pointer;
+  padding: 15px 20px;
+  width: 100%;
+  border: 1px solid var(--light-tan);
+  text-align: left;
+  outline: none;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+
+.collapsible-project .caret {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-size: 12px;
+}
+
+.collapsible-project.active .caret {
+  transform: rotate(180deg);
+}
+
+.collapsible-project.active {
+  background-color: var(--light-blue);
+}
+
+.collapsible-project:hover {
+  background-color: var(--light-blue);
+}
+
+.content-project {
+  padding: 1.5rem 20px;
+  background-color: #fff;
+  border: 1px solid var(--light-tan);
+  border-top: none;
+  max-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition: max-height 0.3s ease-out, visibility 0.3s ease-out;
+  text-align: left;
+}
+
+.content-project p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.content-project a {
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.content-project button {
+  background-color: var(--light-tan);
+  color: var(--dark-tan);
+  border: 1px solid var(--dark-tan);
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: normal;
+  font-family: 'Georgia', serif;
+}
+
+.content-project button:hover {
+  background-color: var(--light-blue);
+  color: var(--dark-tan);
+}
+
+.active + .content-project {
+  visibility: visible;
+}
