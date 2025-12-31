@@ -1,21 +1,56 @@
 <!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annamaria Palmiero</title>
 </head>
     <link rel="stylesheet" href="home_styles.css">
 <body>
-
-    <figure>
-    <div class="outerBevel">
-      <div class="flatSurface">
-        <div class="innerBevel">
-           <img src = "photos/headshot_2025.jpg", width="250" height = "300", style = "margin: 0px 0px 0px 0px">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Annamaria Palmiero</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#cv" class="nav-link">Curriculum Vitae</a></li>
+                <li><a href="#projects" class="nav-link">All Projects</a></li>
+                <li><a href="#photos" class="nav-link">My Photo Album!</a></li>
+                <li><a href="#contact" class="nav-link">Connect with Me</a></li>
+            </ul>
         </div>
-      </div>
-    </div>
-  </figure>
-    
-    <a href = "desmosrecreation/desmos.html"> <button>Desmos Recreation</button></a>
-    <a href = "cmsc436/portfolio.html"> <button>CMSC 436 Portfolio</button></a>
+    </nav>
 
+    <div class="container">
+        <h1></h1>
+
+        <div class="nail"></div>
+        <figure class="hanging-frame">
+        <div class="outerBevel">
+          <div class="flatSurface">
+            <div class="innerBevel">
+               <img src = "photos/headshot_2025.jpg", width="250" height = "300", style = "margin: 0px 0px 0px 0px">
+            </div>
+          </div>
+        </div>
+        </figure>
+
+        <button type="button" class="collapsible">
+          <span class="caret">▼</span> About Me
+        </button>
+        <div class="content">
+            <p>My name is Annamaria Palmiero, and I am an undergraduate student at the University of Maryland, Baltimore County. I study Statistics, Computer Science, and Mathematics. </p> <br
+            <p>My academic and research experiences sit at the intersection of machine learning, scientific computing, and applied mathematics. I enjoy working on interdisciplinary problems that feel grounded in real-world applications. Previously, I have worked on projects involving Computational Fluid Dynamics at Yale University, and Machine Learning and Data Science for the Department of the Navy and University of Maryland Baltimore County's Division of Information Technology. </p> <br
+            <p>Beyond technical work, I’m deeply committed to mentorship, teaching, and community engagement. I’ve held leadership roles in student organizations and mentoring programs, where I support students navigating quantitative fields and help foster inclusive, welcoming environments in STEM. I also serve as a member for the Sargent Shriver Center's Partnership Development Committee, where I help build relationships between UMBC and local community organizations.</p>
+        </div>
+
+        <button type="button" class="collapsible">
+          <span class="caret">▼</span> Selected Projects
+        </button>
+        <div class="content">
+            <a href = "desmosrecreation/desmos.html"> <button>Desmos Recreation</button></a>
+            <a href = "cmsc436/portfolio.html"> <button>CMSC 436 Portfolio</button></a>
+        </div>
+    </div>
+
+    <script src="home.js"></script>
 </body>
 </html>
 
