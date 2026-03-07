@@ -20,9 +20,445 @@
 
     <div class="container">
         <h1>My Photo Album</h1>
-        <p>page in progress, thanks for your patience!</p>
+        
+        <style>
+            .landing-photo {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .landing-photo img {
+                max-width: 100%;
+                height: auto;
+                max-height: 500px;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                object-fit: cover;
+                object-position: center;
+            }
+            .collapsible {
+              background-color: #fff;
+              color: #8B7355;
+              cursor: pointer;
+              padding: 15px 20px;
+              width: 100%;
+              border: 1px solid #E8D5C4;
+              text-align: left;
+              outline: none;
+              font-size: 1rem;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              transition: all 0.3s ease;
+              margin-top: 1rem;
+              font-weight: normal;
+              letter-spacing: 0.5px;
+              font-family: 'Georgia', serif;
+            }
+            
+            button.collapsible {
+              cursor: pointer;
+              transition: all 0.3s ease;
+            }
+            
+            button.collapsible:active {
+              transform: scale(0.98);
+            }
+            
+            .caret {
+              display: inline-block;
+              transition: transform 0.3s ease;
+              font-size: 12px;
+            }
+            
+            .active .caret {
+              transform: rotate(180deg);
+            }
+            
+            .active {
+              background-color: #B4D9E8;
+            }
+            
+            .collapsible:hover {
+              background-color: #B4D9E8;
+            }
+            
+            .active + .content {
+              visibility: visible;
+            }
+            
+            .content {
+              padding: 1rem 20px;
+              background-color: #fff;
+              border: 1px solid #E8D5C4;
+              border-top: none;
+              max-height: 0;
+              overflow: hidden;
+              visibility: hidden;
+              transition: max-height 0.3s ease-out, visibility 0.3s ease-out;
+            }
+            
+            .content.expanded {
+              visibility: visible;
+            }
+            .photo-group {
+                margin: 20px 0;
+            }
+            .photo-group h3 {
+                font-size: 1.2em;
+                margin-bottom: 15px;
+                padding-bottom: 8px;
+            }
+            .carousel-container {
+                position: relative;
+                background: #f5f5f5;
+                border-radius: 8px;
+                overflow: visible;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                margin-bottom: 20px;
+            }
+            .carousel-wrapper {
+                position: relative;
+                width: 100%;
+                max-width: 800px;
+                margin: 0 auto;
+                border-radius: 8px 8px 0 0;
+                overflow: hidden;
+            }
+            .carousel-slide {
+                display: none;
+                text-align: center;
+            }
+            .carousel-slide.active {
+                display: flex;
+                flex-direction: column;
+            }
+            .carousel-slide-image {
+                width: 100%;
+                height: auto;
+                max-height: 600px;
+                object-fit: contain;
+                display: block;
+            }
+            .carousel-slide img {
+                width: 100%;
+                height: auto;
+                max-height: 600px;
+                object-fit: contain;
+                display: block;
+            }
+            .carousel-caption {
+                padding: 20px;
+                background: white;
+                display: block;
+            }
+            .carousel-caption .date {
+                font-weight: bold;
+                color: #555;
+                margin-bottom: 8px;
+                font-size: 0.9em;
+            }
+            .carousel-caption .description {
+                color: #777;
+                font-size: 0.95em;
+                line-height: 1.5;
+            }
+            .carousel-nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px;
+                background: white;
+                border-radius: 0 0 8px 8px;
+            }
+            .carousel-btn {
+                background: #333;
+                color: white;
+                border: none;
+                padding: 10px 15px;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 1em;
+            }
+            .carousel-btn:hover {
+                background: #555;
+            }
+            .carousel-counter {
+                color: #555;
+                font-size: 0.9em;
+            }
+            .photo-gallery {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin: 20px 0;
+            }
+            .photo-item {
+                background: #f5f5f5;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+            }
+            .photo-item:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            }
+            .photo-item img {
+                width: 100%;
+                height: auto;
+                max-height: 500px;
+                object-fit: contain;
+                display: block;
+            }
+            .photo-caption {
+                padding: 15px;
+            }
+            .photo-caption .date {
+                font-weight: bold;
+                color: #555;
+                margin-bottom: 5px;
+                font-size: 0.9em;
+            }
+            .photo-caption .description {
+                color: #777;
+                font-size: 0.95em;
+                line-height: 1.5;
+            }
+        </style>
+
+        <!-- Landing Photo -->
+        <div class="landing-photo">
+            <img src="../photos/joke_photo.PNG" alt="Joke Photo">
+        </div>
+
+        <!-- 2026 Dropdown -->
+        <button type="button" class="collapsible">
+          <span class="caret">▼</span> 2026
+        </button>
+        <div class="content">
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="../photos/plant_nursery_cat.jpg" alt="JMM Selfie">
+                    <div class="photo-caption">
+                        <div class="date">Saturday, February 28, 2026</div>
+                        <div class="description">Sleepy cat enjoying the sun at Meehan's Minatures Plant Nursery in Maryland</div>
+                    </div>
+                </div>
+
+
+            <!-- Oyster Processing -->
+            <div class="photo-group">
+                <h3>Oyster Processing</h3>
+                <div class="carousel-container">
+                    <div class="carousel-wrapper">
+                        <div class="carousel-slide active">
+                            <img src="../photos/oyster_processing_1.jpeg" alt="Oyster Processing 1">
+                            <div class="carousel-caption">
+                                <div class="date">Wednesday, February 18, 2026</div>
+                                <div class="description">Collecting data for senior thesis research on oyster parasite dynamics! Photo taken at the Tracy Lab in the Insititute for Marine and Environmental Technology.</div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../photos/oyster_processing_2.jpeg" alt="Oyster Processing 2">
+                            <div class="carousel-caption">
+                                <div class="date">Wednesday, February 18, 2026</div>
+                                <div class="description">Photo of oyster samples during processing at the Tracy Lab.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="carousel-btn" onclick="prevSlide(this)">← Previous</button>
+                        <span class="carousel-counter"><span class="current">1</span> / <span class="total">2</span></span>
+                        <button class="carousel-btn" onclick="nextSlide(this)">Next →</button>
+                    </div>
+                </div>
+            </div>
+
+                <div class="photo-item">
+                    <img src="../photos/jmm_selfie.jpg" alt="Plant Nursery Cat">
+                    <div class="photo-caption">
+                        <div class="date">Tuesday, January 6, 2026</div>
+                        <div class="description">Presented findings on Matrix Decomposition of High-Speed Fluid Flows at the 2026 Joint Mathematics Meeting in Washington D.C.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2025 Dropdown -->
+        <button type="button" class="collapsible">
+          <span class="caret">▼</span> 2025
+        </button>
+        <div class="content">
+
+            <!-- Mu Sigma Rho -->
+            <div class="photo-group">
+                <div class="carousel-container">
+                    <div class="carousel-wrapper">
+                        <div class="carousel-slide active">
+                            <img src="../photos/mu_sigma_rho_eboard.JPG" alt="Mu Sigma Rho E-Board">
+                            <div class="carousel-caption">
+                                <div class="date">Monday, November 24, 2025</div>
+                                <div class="description">2025-26 Executive Board Photo of UMBC's chapter of Mu Sigma Rho, the National Statistics Honorary Society</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NAVSEA Presentation -->
+            <div class="photo-group">
+                <div class="carousel-container">
+                    <div class="carousel-wrapper">
+                        <div class="carousel-slide active">
+                            <img src="../photos/navsea_presentation.jpg" alt="NAVSEA Presentation">
+                            <div class="carousel-caption">
+                                <div class="date">Friday, October 3, 2025</div>
+                                <div class="description">Preparing a brief for Dashboard Best Practices for my Department of the Navy internship</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summer Research (SUMRY) -->
+            <div class="photo-group">
+                <h3>Mathematics Research at Yale University</h3>
+                <div class="carousel-container">
+                    <div class="carousel-wrapper">
+                        <div class="carousel-slide active">
+                            <img src="../photos/sumry_welcome_banner.jpg" alt="Yale Welcome Banner">
+                            <div class="carousel-caption">
+                                <div class="date">Friday, June 13, 2025</div>
+                                <div class="description">Welcome to Yale!! I'm grateful to have participated in the 2025 Summer Undergraduate Mathematics Research at Yale (SUMRY) Program!</div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../photos/sumry_pauli_murray.jpg" alt="SUMRY Pauli Murray">
+                            <div class="carousel-caption">
+                                <div class="date">Monday, June 2, 2025</div>
+                                <div class="description">Photo of Pauli Murray hall, where I called home for the duration of the program.</div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../photos/sumry_homework.jpg" alt="SUMRY Homework">
+                            <div class="carousel-caption">
+                                <div class="date">Monday, June 23, 2025</div>
+                                <div class="description">Dividing tasking between research group members, and collaborating on the blackboard. This was a SUMRY staple, as all research meetings were in Leet Oliver Memorial Hall (affectionately known as "LOM", a true relic, google it).</div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../photos/sumry_jane_st.jpg" alt="SUMRY Jane Street">
+                            <div class="carousel-caption">
+                                <div class="date">Monday, July 21, 2025</div>
+                                <div class="description">Jane Street invited REUs from the tri-state area (New Jersey, New York, and Connecticut) to their NYC office for an estimathon and poster session!</div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../photos/sumry_lom_sign.jpg" alt="SUMRY LOM Sign">
+                            <div class="carousel-caption">
+                                <div class="date">Thursday, June 5, 2025</div>
+                                <div class="description">Reminder not to spill your coffee in LOM!</div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../photos/sumry_arcade.jpg" alt="New Haven Arcade">
+                            <div class="carousel-caption">
+                                <div class="date">Sunday, July 14, 2025</div>
+                                <div class="description">Ben, Elizabeth, and I setting records in Atari! I'm horrible...</div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../photos/sumry_ymc.jpg" alt="SUMRY YMC">
+                            <div class="carousel-caption">
+                                <div class="date">Thursday, July 31, 2025</div>
+                                <div class="description">Giving a presentation at on SUMRY research at the Young Mathematicians Conference in Columbus, Ohio! Thanks Ohio State!</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="carousel-btn" onclick="prevSlide(this)">← Previous</button>
+                        <span class="carousel-counter"><span class="current">1</span> / <span class="total">7</span></span>
+                        <button class="carousel-btn" onclick="nextSlide(this)">Next →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
     <script src="../home.js"></script>
+    <script>
+        // Collapsible button functionality - initialize when DOM is ready
+        function initializeCollapsibles() {
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+            
+            for (i = 0; i < coll.length; i++) {
+              coll[i].addEventListener("click", function(e) {
+                e.preventDefault();
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                
+                if (content.classList.contains("expanded")) {
+                  // Collapse
+                  content.classList.remove("expanded");
+                  content.style.maxHeight = null;
+                } else {
+                  // Expand
+                  content.classList.add("expanded");
+                  // Add 60px buffer to ensure carousel nav buttons don't get clipped
+                  content.style.maxHeight = (content.scrollHeight + 60) + "px";
+                  // Recalculate in case content changed size
+                  setTimeout(function() {
+                    content.style.maxHeight = (content.scrollHeight + 60) + "px";
+                  }, 0);
+                }
+              });
+            }
+        }
+        
+        // Initialize when DOM is ready
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initializeCollapsibles);
+        } else {
+            initializeCollapsibles();
+        }
+        
+        // Carousel functionality
+        function nextSlide(button) {
+            const carousel = button.closest('.carousel-container');
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const currentSlide = carousel.querySelector('.carousel-slide.active');
+            let nextIndex = Array.from(slides).indexOf(currentSlide) + 1;
+            
+            if (nextIndex >= slides.length) {
+                nextIndex = 0;
+            }
+            
+            currentSlide.classList.remove('active');
+            slides[nextIndex].classList.add('active');
+            
+            const counter = carousel.querySelector('.current');
+            counter.textContent = nextIndex + 1;
+        }
+        
+        function prevSlide(button) {
+            const carousel = button.closest('.carousel-container');
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const currentSlide = carousel.querySelector('.carousel-slide.active');
+            let prevIndex = Array.from(slides).indexOf(currentSlide) - 1;
+            
+            if (prevIndex < 0) {
+                prevIndex = slides.length - 1;
+            }
+            
+            currentSlide.classList.remove('active');
+            slides[prevIndex].classList.add('active');
+            
+            const counter = carousel.querySelector('.current');
+            counter.textContent = prevIndex + 1;
+        }
+    </script>
 </body>
 </html>
